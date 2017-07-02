@@ -15,9 +15,10 @@ cur_path = os.path.dirname(os.path.realpath(__file__))
 def render_html(name):
     return open(os.path.join(cur_path, 'templates/', name), 'r').read()
 
-def write_log(line):
-    with open(os.path.join(Path.logs, 'server', 'logs.txt'), 'w') as f:
-        f.write(line)
+def write_log(terms):
+    line = [time.strftime("%a, %d %b %Y %H:%M:%S")] + terms
+    with open(os.path.join(Path.logs, 'server', 'logs.txt'), 'a+') as f:
+        f.write('; '.join(line) + '\n')
 
 @app.route("/")
 def index():
@@ -33,8 +34,8 @@ def send():
     ancient = model.predict(modern)
     message['ancient'] = ancient
 
-    write_log(request.remote_addr + "," + modern + "," + ancient)
-
+    write_log([request.remote_addr, modern, ancient])
+    
     return json.dumps(message)
 
 if __name__ == '__main__':
