@@ -56,7 +56,7 @@ step = tf.train.AdamOptimizer(1e-3).minimize(loss)
 
 sess = tf.InteractiveSession()
 
-writer = tf.summary.FileWriter(Path.logs, sess.graph)
+writer = tf.summary.FileWriter(os.path.join(Path.logs, "tensorflow"), sess.graph)
 merged = tf.summary.merge_all()
 
 tf.global_variables_initializer().run()
