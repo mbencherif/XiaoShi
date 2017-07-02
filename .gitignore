@@ -1,0 +1,9 @@
+/.vscode/
+/data/
+/**/__pycache__/
+/logs/
+/env/
+*.pkl
+*.npz
+*.ckpt.*
+checkpoint

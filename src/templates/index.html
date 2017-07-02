@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.2.10/semantic.min.css" rel="stylesheet">
+    <title>华工小施</title>
+</head>
+
+<body>
+    <a href="https://github.com/Enhuiz/XiaoShi">
+        <img style="" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"
+            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+    <div id="xiaoshi" class="ui test container center aligned">
+        <h1>华工小施</h1>
+        <br>
+        <div class="ui positive message" v-for="message in messages">
+            <p> 由你的<b>“ {{ message.modern }} ”</b>我作出了</p>
+            <div class="header">
+                {{message.ancient }}
+            </div>
+        </div>
+
+        <div class="ui action input ">
+            <input type="text " v-model="modern " placeholder="输入一点意象 ">
+            <button class="ui basic button " @click="sendMessage ">做句诗吧</button>
+        </div>
+    </div>
+
+    <script src=" https://cdn.bootcss.com/vue/2.3.4/vue.min.js "></script>
+    <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js "></script>
+
+    <script src="static/js/xiaoshi.js "></script>
+</body>
+
+</html>
