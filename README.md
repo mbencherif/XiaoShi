@@ -27,3 +27,5 @@ Tip: 使用Tensorflow GPU版本，训练会更快喔。
 $ cd ./src
 $ python3 server.py
 ```
+## 一些示例
+![example](./mdimg/example.png)
